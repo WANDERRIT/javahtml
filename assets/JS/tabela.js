@@ -1,4 +1,37 @@
-const url = "http://localhost:3000/api/jogadores"
+const url = "http://localhost:3000/api/jogadores";
+const tableContent = document.getElementById("tabela-busca");
+const inputBusca = document.getElementById("busca");
+
+inputBusca.addEventListener("keyup", ()=>{
+    let result = inputBusca.value.toLowerCase();
+    if(result === 1){
+        return;
+    }
+
+    let linhas = tableContent.getElementsByTagName("tr");
+    for(let posicao in linhas){
+        if(true == isNaN(posicao)){
+            continue;
+        }
+
+        let conteudoDaLinha = linhas[posicao].innerHTML.toLowerCase();
+
+        if(true === conteudoDaLinha.includes(result)){
+            linhas[posicao].style.display = "";
+        }else{
+            linhas[posicao].style.display = "none";
+        }
+    }
+
+})
+
+
+
+
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     // Função para criar botões para cada linha
@@ -10,16 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Função para editar um usuário
     window.editarUsuario = function (id) {
-       
-        fetch('http://localhost:3000/api/jogadores/1', {
+
+       //mudar o id(número) do jogador no final da URL
+        fetch('http://localhost:3000/api/jogadores/3', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
+            //Alterar dados do jogador
             body: JSON.stringify({
-                emailJogador: "rob@email.com",
-                nicknameJogador: "robb",
-                nomeJogador: "Robertot",
+                emailJogador: "gabs@email.com",
+                nicknameJogador: "Gabriel",
+                nomeJogador: "Gabs",
             }),
         })
         .then(response => {
@@ -38,8 +73,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Função para excluir um usuário
     window.excluirUsuario = function (id) {
        
+        //mudar o id(número) do ranking no final da url.
         if (confirm('Tem certeza de que deseja excluir este jogador?')) {
-            fetch(`http://localhost:3000/api/rankings/4`, {
+            fetch(`http://localhost:3000/api/jogadores/7`, {
                 method: 'DELETE',
             })
             .then(response => {
@@ -73,9 +109,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     <td>${usuario.nicknameJogador}</td>
                     <td>${usuario.rankings.map(ranking => ranking.pontuacao)}</td>
                     <td>${usuario.rankings.map(jogos => jogos.jogos.nomeJogo)}</td>
+                    <td>${usuario.rankings.map(idJogos => idJogos.jogos.idJogo)}</td>
+                    <td>${usuario.rankings.map(webSite => webSite.jogos.websiteJogo)}</td>
                     <td>${criarBotoes(usuario.id)}</td>
                 `;
                 tabelaBody.appendChild(novaLinha);
+              
                 console.log(usuario)
             });
         })

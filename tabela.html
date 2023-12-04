@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/img/controle-de-video-game.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/CSS/style.css">
-    <title>Document</title>
+    <title>Tabela de jogadores</title>
 </head>
 <body>
 
@@ -15,6 +16,7 @@
           <a href="tabela.html">Tabela</a>
         </nav>
       </header>
+      <input type="text" id="busca">
       <section class="container">
         <div class="bolhas">
             <span style="--i:14"></span>
@@ -54,8 +56,8 @@
             <span style="--i:14"></span>
             <span style="--i:3"></span>
 
+            
             <div class="tabela">
-      
                 <table id="dadosTabela" border="1">
                     <thead>
                         <tr>
@@ -65,9 +67,11 @@
                             <th>Email</th>
                             <th>Pontuação</th>
                             <th>Jogo</th>
+                            <th>Id do Jogo</th>
+                            <th>Web Site</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabela-busca">
                       
                     </tbody>
                 </table>

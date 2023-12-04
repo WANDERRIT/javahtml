@@ -151,6 +151,10 @@ section{
     justify-content: center;
     padding: 20px;
 }
+#busca{
+    width: 50%;
+    margin-left: 26%;
+}
 .tabela{
     background-color: rgb(0, 0, 0, 0.0);
     width: 55%;

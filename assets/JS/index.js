@@ -23,10 +23,10 @@ form.addEventListener('submit', async (event) => {
         body: JSON.stringify(formObject),
       });
       
-    const pedido = await response.json();
-    console.log('Dados do pedido:', pedido);
+    const jogador = await response.json();
+    console.log('Dados do jogador:', jogador);
     } catch (error) {
-      console.error('Erro ao obter dados do pedido:', error);
+      console.error('Erro ao obter dados do jogador:', error);
     }
   });
 
@@ -49,10 +49,10 @@ form.addEventListener('submit', async (event) => {
         body: JSON.stringify(formObject),
       });
       
-    const pedido = await response.json();
-    console.log('Dados do pedido:', pedido);
+    const jogo = await response.json();
+    console.log('Dados do jogo:', jogo);
     } catch (error) {
-      console.error('Erro ao obter dados do pedido:', error);
+      console.error('Erro ao obter dados do jogo:', error);
     }
   });
 
@@ -75,9 +75,9 @@ form.addEventListener('submit', async (event) => {
         body: JSON.stringify(formObject),
       });
       
-    const pedido = await response.json();
-    console.log('Dados do pedido:', pedido);
+    const ranking = await response.json();
+    console.log('Dados do pedido:', ranking);
     } catch (error) {
-      console.error('Erro ao obter dados do pedido:', error);
+      console.error('Erro ao obter dados do ranking:', error);
     }
   });
