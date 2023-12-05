@@ -191,3 +191,57 @@ table td{
 #id-busca{
     display: none;
 }
+
+
+
+/* modal */
+/* Estilo do Modal */
+
+.formModal{
+    background-color: #ffffff;
+    border: none;
+}
+
+.inputModal input{
+background-color: rgb(254, 254, 254);
+border-bottom: 2px solid #0c192c;
+border-radius: 0;
+}
+
+.inputModal label{
+color: #0c192c;
+font-weight: bold;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 50%;
+    height: 80%;
+
+    margin-left: 25%;
+  }
+
+  .modal-content{
+    height: 100%;
+  }
+  
+  
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 15px;
+
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

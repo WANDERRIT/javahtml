@@ -25,37 +25,37 @@ inputBusca.addEventListener("keyup", ()=>{
 
 })
 
+function abrirModal() {
+    document.getElementById('meuModal').style.display = 'block';
+  }
 
-
-
-
-
-
-
+  function fecharModal() {
+    document.getElementById('meuModal').style.display = 'none';
+  }
 
 document.addEventListener('DOMContentLoaded', function () {
     // Função para criar botões para cada linha
     function criarBotoes(id) {
-        const editarBotao = `<button onclick="editarUsuario(${id})">Editar</button>`;
+        const editarBotao = `<button onclick="abrirModal()">Editar</button>`;
         const excluirBotao = `<button onclick="excluirUsuario(${id})">Excluir</button>`;
         return `${editarBotao} ${excluirBotao}`;
     }
 
     // Função para editar um usuário
     window.editarUsuario = function (id) {
-
+        abrirModal();
        //mudar o id(número) do jogador no final da URL
-        fetch('http://localhost:3000/api/jogadores/3', {
+        fetch('http://localhost:3000/api/jogadores/1', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             //Alterar dados do jogador
             body: JSON.stringify({
-                emailJogador: "gabs@email.com",
-                nicknameJogador: "Gabriel",
-                nomeJogador: "Gabs",
-            }),
+                nomeJogador: document.getElementById('NameJogador').value,
+                emailJogador: document.getElementById('EmailJogador').value,
+                nicknameJogador: document.getElementById('Nickname').value,
+              }),
         })
         .then(response => {
             if (!response.ok) {
@@ -63,10 +63,10 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             return response.json();
         })
-        .then(data => {
-            alert(`Usuário editado com sucesso!`);
+        // .then(data => {
+        //     alert(`Usuário editado com sucesso!`);
     
-        })
+        // })
         .catch(error => console.error('Erro ao editar jogador:', error));
     };
 
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
        
         //mudar o id(número) do ranking no final da url.
         if (confirm('Tem certeza de que deseja excluir este jogador?')) {
-            fetch(`http://localhost:3000/api/jogadores/7`, {
+            fetch(`http://localhost:3000/api/jogadores/11`, {
                 method: 'DELETE',
             })
             .then(response => {

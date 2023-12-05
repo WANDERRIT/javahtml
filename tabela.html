@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="shortcut icon" href="assets/img/controle-de-video-game.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/CSS/style.css">
     <title>Tabela de jogadores</title>
 </head>
+
 <body>
 
     <header>
         <h1>Tabela de Jogadores</h1>
         <nav>
-          <a href="index.html">Home</a>
-          <a href="tabela.html">Tabela</a>
+            <a href="index.html">Home</a>
+            <a href="tabela.html">Tabela</a>
         </nav>
-      </header>
-      <input type="text" id="busca">
-      <section class="container">
+    </header>
+
+<!-- Modal -->
+<div id="meuModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()"><button>fechar</button></span>
+      <form id="meuFormulario" class="formModal">
+   
+          <h2>Jogadores</h2>
+          <div class="inputModal">
+
+              <label for="campo1">Nome jogador</label>
+              <input type="text" id="NameJogador" name="nomeJogador">
+      
+              <label for="campo2">Email jogador</label>
+              <input type="text" id="EmailJogador" name="emailJogador">
+      
+              <label for="campo2">Nickname jogador</label>
+              <input type="text" id="Nickname" name="nicknameJogador">
+          </div>
+        <button type="submit" onclick="editarUsuario()">Enviar</button>
+      </form>
+    </div>
+  </div>
+  
+
+    <input type="text" id="busca">
+    <section class="container">
         <div class="bolhas">
             <span style="--i:14"></span>
             <span style="--i:16"></span>
@@ -56,15 +85,15 @@
             <span style="--i:14"></span>
             <span style="--i:3"></span>
 
-            
+
             <div class="tabela">
                 <table id="dadosTabela" border="1">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>Apelido</th>
                             <th>Email</th>
+                            <th>Apelido</th>
                             <th>Pontuação</th>
                             <th>Jogo</th>
                             <th>Id do Jogo</th>
@@ -72,17 +101,28 @@
                         </tr>
                     </thead>
                     <tbody id="tabela-busca">
-                      
+
                     </tbody>
                 </table>
             </div>
 
         </div>
 
-         
-      </section>
 
-<script src="assets/JS/tabela.js"></script>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <script src="assets/JS/tabela.js"></script>
 
 </body>
+
 </html>
